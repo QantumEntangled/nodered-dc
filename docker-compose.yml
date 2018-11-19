@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+    app:
+        image: nodered/node-red-docker
+        restart: unless-stopped
+        networks:
+            - net
+        ports:
+            - "1880:1880"
+        volumes:
+            - "./data:/data"
+
+networks:
+    net:
